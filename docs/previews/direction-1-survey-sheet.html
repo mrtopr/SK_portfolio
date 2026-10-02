@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Direction 1: Survey Sheet | Sachin Kumar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root[data-theme="light"] {
+      --bg: #EDF1F0;
+      --surface: #E3EBE9;
+      --ink: #12201F;
+      --ink-muted: #526663;
+      --contour: #B9C6C2;
+      --contour-subtle: #D2DCD9;
+      --accent: #D6246E;
+      --accent-dim: rgba(214, 36, 110, 0.12);
+      --water: #2A5C8A;
+      --badge-bg: #DCE5E3;
+    }
+    :root[data-theme="dark"] {
+      --bg: #0F1719;
+      --surface: #162124;
+      --ink: #E6EEEB;
+      --ink-muted: #8B9E9A;
+      --contour: #26363B;
+      --contour-subtle: #1C282C;
+      --accent: #FF6B9C;
+      --accent-dim: rgba(255, 107, 156, 0.15);
+      --water: #7FA6CC;
+      --badge-bg: #1B292D;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: 'Public Sans', -apple-system, sans-serif;
+      line-height: 1.55;
+      font-size: 15px;
+      min-height: 100vh;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      background-image: 
+        linear-gradient(var(--contour-subtle) 1px, transparent 1px),
+        linear-gradient(90deg, var(--contour-subtle) 1px, transparent 1px);
+      background-size: 40px 40px;
+      background-position: -1px -1px;
+    }
+
+    .top-bar {
+      border-bottom: 1px solid var(--contour);
+      background: var(--bg);
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--ink-muted);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .top-bar-coords {
+      display: inline-block;
+    }
+
+    @media (max-width: 600px) {
+      .top-bar { padding: 10px 16px; font-size: 11px; }
+      .top-bar-coords { display: none; }
+    }
+
+    .theme-toggle {
+      background: var(--surface);
+      border: 1px solid var(--contour);
+      color: var(--ink);
+      padding: 4px 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      cursor: pointer;
+      border-radius: 2px;
+    }
+
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .survey-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      border-bottom: 1px solid var(--contour);
+      padding-bottom: 36px;
+      margin-bottom: 40px;
+    }
+
+    .meta-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--ink-muted);
+      margin-bottom: 12px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .status-dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background-color: var(--accent);
+      border-radius: 50%;
+    }
+
+    h1 {
+      font-family: 'Newsreader', serif;
+      font-size: 44px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+
+    .lead {
+      font-size: 18px;
+      color: var(--ink-muted);
+      max-width: 620px;
+      line-height: 1.5;
+    }
+
+    .quick-links {
+      display: flex;
+      gap: 16px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .quick-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--ink);
+      text-decoration: none;
+      padding: 6px 12px;
+      border: 1px solid var(--contour);
+      background: var(--surface);
+      transition: border-color 0.15s;
+    }
+    .quick-link:hover {
+      border-color: var(--ink);
+    }
+    .quick-link.primary {
+      background: var(--ink);
+      color: var(--bg);
+      border-color: var(--ink);
+    }
+
+    .survey-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 32px;
+      border-top: 1px solid var(--contour);
+      padding-top: 32px;
+    }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-muted);
+    }
+
+    .project-index-card {
+      border: 1px solid var(--contour);
+      background: var(--surface);
+      padding: 24px;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .project-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .project-title {
+      font-family: 'Newsreader', serif;
+      font-size: 26px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+
+    .project-desc {
+      color: var(--ink-muted);
+      font-size: 14px;
+      margin-bottom: 16px;
+      max-width: 580px;
+    }
+
+    .specs-strip {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--ink-muted);
+      border-top: 1px solid var(--contour);
+      padding-top: 12px;
+    }
+    .spec-item strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .survey-header { grid-template-columns: 1fr; }
+      .survey-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 32px; }
+      .container { padding: 32px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div>INDEX // SDE PORTFOLIO // SACHIN KUMAR</div>
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <span class="top-bar-coords">LAT 20.2961° N, LON 85.8245° E</span>
+      <button class="theme-toggle" onclick="toggleTheme()">SWITCH THEME</button>
+    </div>
+  </div>
+
+  <main class="container">
+    <header class="survey-header">
+      <div>
+        <div class="meta-tag">
+          <span class="status-dot"></span>
+          <span>IIIT BHUBANESWAR • B.TECH CE '28</span>
+          <span>// FULL-STACK &amp; REAL-TIME</span>
+        </div>
+        <h1>Sachin Kumar</h1>
+        <p class="lead">
+          Building systems that handle live coordination, spatial indexing, and strict role dispatch. Grounded in C++, Node.js, and PostgreSQL.
+        </p>
+        <div class="quick-links">
+          <a href="#projects" class="quick-link primary">Jump to Projects</a>
+          <a href="https://github.com/mrtopr" class="quick-link">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/isachin-kumar" class="quick-link">LinkedIn ↗</a>
+          <a href="mailto:isachinkr02@gmail.com" class="quick-link">Email</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="survey-grid">
+      <div>
+        <div class="section-label">[ 01 / FEATURED BUILD ]</div>
+        <p style="font-size: 13px; color: var(--ink-muted); margin-top: 8px;">
+          Core production case study with real-time geospatial thresholding.
+        </p>
+      </div>
+
+      <div>
+        <div class="project-index-card">
+          <div class="project-tag">GEO-DISPATCH &amp; REAL-TIME SYSTEM</div>
+          <h2 class="project-title">SentinelLink — Emergency Response Coordination Platform</h2>
+          <p class="project-desc">
+            Stateless PERN architecture for real-time incident logging. Suppresses redundant reports via 200m / 10min spatial-temporal clustering and limits WebSocket fanout via room isolation.
+          </p>
+          <div class="specs-strip">
+            <span class="spec-item">Stack: <strong>React, Node.js, PostgreSQL, Socket.IO, Leaflet</strong></span>
+            <span class="spec-item">Deduplication: <strong>200m / 10min threshold</strong></span>
+            <span class="spec-item">Auth: <strong>Stateless JWT + RBAC</strong></span>
+          </div>
+        </div>
+
+        <div class="project-index-card">
+          <div class="project-tag">ACADEMIC DATA PLATFORM</div>
+          <h2 class="project-title">EduArchive — Institutional Knowledge Repository</h2>
+          <p class="project-desc">
+            Indexed academic resource repository serving IIIT Bhubaneswar. Normalized schema across 4 engineering branches, reducing document discovery time by ~60% in testing.
+          </p>
+          <div class="specs-strip">
+            <span class="spec-item">Stack: <strong>Node.js, Express, PostgreSQL, Cloudinary</strong></span>
+            <span class="spec-item">Metric: <strong>~60% search time reduction</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      html.setAttribute('data-theme', current === 'light' ? 'dark' : 'light');
+    }
+  </script>
+</body>
+</html>

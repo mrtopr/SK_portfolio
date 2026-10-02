@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Direction 3: Editorial Monograph | Sachin Kumar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root[data-theme="light"] {
+      --bg: #F9F8F6;
+      --surface: #FFFFFF;
+      --ink: #18181B;
+      --ink-muted: #66666E;
+      --border: #E4E4E7;
+      --accent: #C2410C;
+      --accent-subtle: #FFF7ED;
+      --badge-border: #FDBA74;
+    }
+    :root[data-theme="dark"] {
+      --bg: #121214;
+      --surface: #18181B;
+      --ink: #F4F4F5;
+      --ink-muted: #9C9CA4;
+      --border: #27272A;
+      --accent: #FB923C;
+      --accent-subtle: #271E18;
+      --badge-border: #7C2D12;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: 'Archivo', sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      min-height: 100vh;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .masthead {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 12px;
+      margin-bottom: 48px;
+    }
+    .masthead-title {
+      font-family: 'Fraunces', serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    .btn-switch {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--ink);
+      padding: 4px 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      cursor: pointer;
+    }
+
+    .hero-editorial {
+      margin-bottom: 56px;
+    }
+
+    .hero-kicker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-size: 52px;
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-bio {
+      font-size: 19px;
+      line-height: 1.5;
+      color: var(--ink-muted);
+      max-width: 680px;
+      margin-bottom: 32px;
+    }
+
+    .action-row {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-main {
+      background: var(--ink);
+      color: var(--bg);
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      border-radius: 2px;
+    }
+    .link-secondary {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .section-title {
+      font-family: 'Fraunces', serif;
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+
+    .case-brief {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    .case-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 12px;
+    }
+
+    .case-title {
+      font-family: 'Fraunces', serif;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .case-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--accent);
+    }
+
+    .case-summary {
+      color: var(--ink-muted);
+      font-size: 15px;
+      margin-bottom: 20px;
+      line-height: 1.55;
+    }
+
+    .tradeoff-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      background: var(--accent-subtle);
+      border: 1px solid var(--border);
+      padding: 16px;
+      font-size: 13px;
+    }
+
+    .tradeoff-item strong {
+      display: block;
+      color: var(--ink);
+      font-size: 12px;
+      text-transform: uppercase;
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 4px;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 36px; }
+      .tradeoff-grid { grid-template-columns: 1fr; }
+      .wrapper { padding: 32px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="masthead">
+      <div class="masthead-title">Sachin Kumar — Monograph &amp; Systems Index</div>
+      <button class="btn-switch" onclick="toggleTheme()">LIGHT / DARK</button>
+    </div>
+
+    <section class="hero-editorial">
+      <div class="hero-kicker">Software Engineering &bull; Real-time Systems</div>
+      <h1>Building software that coordinates under <em>high real-time load</em>.</h1>
+      <p class="hero-bio">
+        B.Tech Computer Engineering student at IIIT Bhubaneswar. Specializing in geospatial indexing, stateless API backends, and low-latency client synchronization.
+      </p>
+      <div class="action-row">
+        <a href="#sentinellink" class="btn-main">Explore Case Studies</a>
+        <a href="https://github.com/mrtopr" class="link-secondary">GitHub</a>
+        <a href="https://www.linkedin.com/in/isachin-kumar" class="link-secondary">LinkedIn</a>
+        <a href="mailto:isachinkr02@gmail.com" class="link-secondary">isachinkr02@gmail.com</a>
+      </div>
+    </section>
+
+    <h2 class="section-title">Case Studies &amp; Architecture</h2>
+
+    <article class="case-brief" id="sentinellink">
+      <div class="case-header">
+        <h3 class="case-title">SentinelLink — Emergency Coordination Architecture</h3>
+        <span class="case-tag">PERN + Socket.IO + GIS</span>
+      </div>
+      <p class="case-summary">
+        Designed an emergency dispatch engine that mitigates notification flooding during major incidents through spatial deduplication and scoped room broadcasts.
+      </p>
+      <div class="tradeoff-grid">
+        <div class="tradeoff-item">
+          <strong>The Problem</strong>
+          During incidents, redundant reports overwhelm dispatchers and client socket pipelines.
+        </div>
+        <div class="tradeoff-item">
+          <strong>The Engineering Trade-off</strong>
+          Enforced a 200m / 10min threshold window with spatial clustering before committing new alerts.
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      html.setAttribute('data-theme', current === 'light' ? 'dark' : 'light');
+    }
+  </script>
+</body>
+</html>

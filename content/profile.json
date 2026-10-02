@@ -1,0 +1,145 @@
+{
+  "_note": "Single source of truth. Edit facts here only. Fields with verify:true are claims Sachin must be able to defend in an interview.",
+  "person": {
+    "name": "Sachin Kumar",
+    "headline": "Full-stack developer who builds real-time systems",
+    "location": "Bhubaneswar, Odisha, India",
+    "email": "isachinkr02@gmail.com",
+    "phone": null,
+    "summary": "B.Tech Computer Engineering student at IIIT Bhubaneswar. Builds full-stack platforms with live data, geospatial logic, and role-based access. Available for software engineering internships and entry-level roles.",
+    "availability": "Available for Summer 2026/2027 SDE Internships",
+    "links": {
+      "github": "https://github.com/mrtopr",
+      "linkedin": "https://www.linkedin.com/in/isachin-kumar",
+      "leetcode": "https://leetcode.com/u/mrtopr/",
+      "instagram": "https://www.instagram.com/iSachin_bhardwaj",
+      "resumePdf": "/resume.pdf",
+      "website": "https://heysachin.me"
+    }
+  },
+  "education": [
+    {
+      "school": "IIIT Bhubaneswar",
+      "degree": "B.Tech, Computer Engineering",
+      "cgpa": "8.06/10",
+      "period": "Aug 2024 - Apr 2028 (expected)"
+    },
+    {
+      "school": "Senior Secondary (Class XII), BSEB, Nawada",
+      "score": "88%",
+      "year": 2023
+    }
+  ],
+  "projects": [
+    {
+      "id": "sentinellink",
+      "featured": true,
+      "name": "SentinelLink",
+      "tagline": "Real-time emergency response coordination platform",
+      "stack": ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "Prisma", "Socket.IO", "Cloudinary", "Leaflet"],
+      "links": {
+        "live": "https://sentinellink.vercel.app",
+        "repo": "https://github.com/mrtopr/SentinelLink",
+        "video": null
+      },
+      "deployedOn": ["Vercel", "Render"],
+      "metrics": {
+        "broadcastLatency": "< 45ms",
+        "spatialRadius": "200m / 10min",
+        "socketFanout": "Room-Isolated",
+        "concurrentConnections": "500+ tested"
+      },
+      "problem": "During emergency spikes, dozens of citizens report the exact same incident. Without automated filtering, responders face severe notification fatigue and socket networks saturate with broadcast noise.",
+      "highlights": [
+        { "text": "Full-stack PERN platform for incident reporting with real-time geolocation pinning and media uploads." },
+        { "text": "Stateless backend with JWT authentication and role-based access control (citizen, responder, dispatcher)." },
+        { "text": "Room-based Socket.IO broadcasting that cuts unnecessary network fanout by 100% across unaffected sectors." },
+        { "text": "Duplicate detection using geospatial and time thresholds (200m / 10min) to automatically merge redundant reports." },
+        { "text": "Live incident visualization with Leaflet heatmaps and sub-50ms event dispatch." }
+      ]
+    },
+    {
+      "id": "eduarchive",
+      "featured": true,
+      "name": "EduArchive",
+      "tagline": "Academic resource platform for IIIT Bhubaneswar students",
+      "status": "In active pilot",
+      "stack": ["HTML5", "CSS3", "JavaScript", "Node.js", "Express", "PostgreSQL", "JWT", "Cloudinary", "Vercel"],
+      "links": {
+        "live": "https://eduarchive.vercel.app",
+        "repo": "https://github.com/mrtopr/EduArchive",
+        "video": null
+      },
+      "metrics": {
+        "searchReduction": "~60% faster",
+        "schemaCoverage": "4 branches / 8 semesters",
+        "querySpeed": "< 15ms lookup",
+        "fileHandling": "1GB+ stream preview"
+      },
+      "problem": "Course syllabi, previous-year question papers (PYQs), and laboratory manuals were scattered across informal chats and drives, causing 10+ minutes of friction per search.",
+      "highlights": [
+        { "text": "REST API with role-based access control for students, contributors, and verified department admins." },
+        { "text": "Normalized PostgreSQL relational schema indexed by Branch (CSE/ETC/EEE/IT), Academic Year, and Semester." },
+        { "text": "Reduced resource-search time by ~60% in internal student benchmark testing." },
+        { "text": "Direct Cloudinary streaming pipeline with in-browser PDF preview supporting large academic files without download lag." },
+        { "text": "Debounced multi-field search engine with an admin-moderated contribution verification queue." }
+      ]
+    }
+  ],
+  "otherProjects": [
+    {
+      "name": "Bat Ball Wicket",
+      "stack": "HTML5, CSS3, JavaScript",
+      "link": "https://github.com/mrtopr/Bat-Ball-Wicket",
+      "note": "Cricket-inspired interactive browser simulation with dynamic state scoring."
+    },
+    {
+      "name": "NCERT Books Portal",
+      "stack": "React, Tailwind CSS, REST APIs",
+      "link": "https://github.com/mrtopr/NCERT-Books-Portal",
+      "note": "Curated digital repository for classes 7-12 Hindi medium educational resources."
+    }
+  ],
+  "achievements": [
+    {
+      "title": "Odoo Hackathon 2026 Finalist",
+      "detail": "Top-tier national finalist among 20,000+ participants (team of 3). Built and deployed an end-to-end full-stack solution under strict 24-hour time constraints."
+    },
+    {
+      "title": "Inter-Collegiate Hackathons",
+      "detail": "Built functional MVPs and full-stack prototypes in competitive cross-functional sprint teams at IIT Bombay Techfest and IIT Jodhpur hackathons."
+    },
+    {
+      "title": "LeetCode (C++) — 300+ Solved",
+      "detail": "300+ algorithmic problems solved covering Trees, Graphs, Dynamic Programming, Sliding Window, and Two Pointers.",
+      "stats": {
+        "solved": "300+",
+        "language": "C++",
+        "profile": "https://leetcode.com/u/mrtopr/"
+      }
+    }
+  ],
+  "experience": [
+    {
+      "role": "Placement Coordinator & Technical Content Lead",
+      "org": "Placement Cell, IIIT Bhubaneswar",
+      "period": "Oct 2025 - Present",
+      "points": [
+        "Coordinating end-to-end recruitment logistics and on-campus placement drives for 30+ tech companies.",
+        "Managing database registration and verification for 300+ engineering candidates.",
+        "Designed structured recruiter communication pipelines that reduced administrative overhead by ~40%."
+      ]
+    }
+  ],
+  "skills": {
+    "Core Fundamentals": ["Data Structures & Algorithms", "Object-Oriented Programming (OOP)", "Database Management Systems (DBMS)", "Operating Systems", "Computer Networks"],
+    "Languages": ["C++", "C", "JavaScript (ES6+)", "TypeScript", "SQL", "Java"],
+    "Backend & APIs": ["Node.js", "Express", "RESTful APIs", "Socket.IO", "WebSockets", "Prisma ORM"],
+    "Frontend": ["React", "Next.js", "Tailwind CSS", "HTML5", "CSS3 / CSS Modules"],
+    "Databases & Cloud": ["PostgreSQL", "MongoDB", "MySQL", "Docker", "Vercel", "Cloudinary", "Git / GitHub", "Postman"]
+  },
+  "beyondCode": {
+    "oneLiner": "Outside the terminal, I practice photography, edit cinematic video reels, and study human-centered interface design."
+  },
+  "todo": []
+}
