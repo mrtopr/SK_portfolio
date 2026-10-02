@@ -1,35 +1,72 @@
-# Dependencies
-/node_modules
-/.pnp
-.pnp.js
-.yarn/install-state.gz
+# ──────────────────────────────────────────────
+#  SK_portfolio — Personal Portfolio Repo
+#  .gitignore — keep the repo clean & lean
+# ──────────────────────────────────────────────
 
-# Testing
-/coverage
-
-# Next.js build output
-/.next/
-/out/
-
-# Production build
-/build
-
-# Misc
-.DS_Store
-*.pem
-
-# Debug logs
+# ── Node / npm ────────────────────────────────
+node_modules/
+.npm
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+.yarn/install-state.gz
+.pnp
+.pnp.js
+package-lock.json   # commit if you want reproducible installs; remove this line if so
 
-# Environment variables
-.env*.local
+# ── Next.js build output ──────────────────────
+.next/
+out/
+build/
+dist/
+
+# ── TypeScript compilation artifacts ─────────
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# ── Environment variables ─────────────────────
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
 
-# Vercel
+# ── OS / Editor junk ─────────────────────────
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.pem
+
+# ── IDE & editor configs ──────────────────────
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ── Debug / coverage ─────────────────────────
+/coverage
+*.lcov
+.nyc_output
+
+# ── Vercel deployment ─────────────────────────
 .vercel
 
-# TypeScript
-*.tsbuildinfo
+# ── Docs / previews (internal design files) ──
+docs/previews/
+
+# ── Misc temporary files ──────────────────────
+*.log
+*.tmp
+*.bak
+*.orig
+
+# ── Agents / AI workspace files ───────────────
+.gemini/
+.agents/
+AGENTS.md
+GEMINI.md
